@@ -12,6 +12,10 @@ import java.util.TreeSet;
  * encapsulated properly, and is not hiding its internal data properly (even
  * though it is set to private).
  *
+ * This data structure is similar to a <a href="https://en.wikipedia.org/wiki/Trie">
+ * trie</a> (pronounced tree or try) used for some forms of autocompletion and 
+ * spelling.
+ *
  * @author CS 272 Software Development (University of San Francisco)
  * @version Fall 2022
  */
@@ -102,7 +106,12 @@ public class PrefixMap implements WordGroup<String> {
 	@Override
 	public String hasWord(String word) {
 		String prefix = getPrefix(word);
-		return internal.containsKey(prefix) ? prefix : null;
+
+		if (internal.containsKey(prefix)) {
+			return internal.get(prefix).contains(word) ? prefix : null;
+		}
+
+		return null;
 	}
 
 	// Converts entire internal data structure into a string representation
