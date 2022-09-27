@@ -301,8 +301,7 @@ public class ParallelStreamBenchmark {
 		 * @return the benchmark results
 		 * @throws IOException if an I/O error occurs
 		 */
-		public default BenchmarkResult benchmark(int rounds, String label)
-				throws IOException {
+		public default BenchmarkResult benchmark(int rounds, String label) throws IOException {
 			long count = 0; // just to make sure we always use the result
 
 			long total = 0;
