@@ -2,6 +2,7 @@ package edu.usfca.cs272;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
@@ -151,12 +152,19 @@ public class RandomArrayTotal {
 
 //		int size = 100; // too small of a problem!
 		int size = 10000000;
+		System.out.printf("calculating sum for %d random numbers...%n", size);
 
-		double fastest = Double.MAX_VALUE;
+		double minBestTime = Double.MAX_VALUE;
+		int minThreads = 0;
 
 		// benchmark in increasing order
 		for (Integer thread : threads) {
-			fastest = Math.min(fastest, benchmark(size, thread));
+			double bestTime = benchmark(size, thread);
+
+			if (bestTime < minBestTime) {
+				minBestTime = bestTime;
+				minThreads = thread;
+			}
 		}
 
 		System.out.println();
@@ -164,10 +172,17 @@ public class RandomArrayTotal {
 		// benchmark in decreasing order
 		// note how varies from first run
 		for (Integer thread : threads.descendingSet()) {
-			fastest = Math.min(fastest, benchmark(size, thread));
+			double bestTime = benchmark(size, thread);
+
+			if (bestTime < minBestTime) {
+				minBestTime = bestTime;
+				minThreads = thread;
+			}
 		}
 
-		System.out.printf("%nFastest average: %.06f", fastest);
+		System.out.printf(
+				"%nFastest minimum: %02d threads in %.06f seconds",
+				minThreads, minBestTime);
 	}
 
 	/**
@@ -189,6 +204,7 @@ public class RandomArrayTotal {
 
 		Instant start;
 		Duration elapsed;
+		Duration minimum = ChronoUnit.FOREVER.getDuration();
 
 		for (int i = 0; i < warmup; i++) {
 			placeholder = Math.max(placeholder, total(numbers, threads));
@@ -198,16 +214,19 @@ public class RandomArrayTotal {
 			start = Instant.now();
 			placeholder = Math.max(placeholder, total(numbers, threads));
 			elapsed = Duration.between(start, Instant.now());
+			minimum = minimum.compareTo(elapsed) > 0 ? elapsed : minimum;
 			average += elapsed.toNanos();
 		}
 
 		average /= runs;
 		average /= Duration.ofSeconds(1).toNanos();
 
-		System.out.printf(
-				"%.06f seconds average for %d numbers and %02d threads (placeholder %d)%n",
-				average, size, threads, placeholder);
+		double seconds = (double) minimum.toNanos() / Duration.ofSeconds(1).toNanos();
 
-		return average;
+		System.out.printf(
+				"%02d threads: %.06f min, %.06f avg seconds (sum: %d) %n",
+				threads, seconds, average, placeholder);
+
+		return seconds;
 	}
 }

@@ -2,8 +2,11 @@ package edu.usfca.cs272;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
+import java.util.TreeSet;
 
 public class RandomArrayTotal {
 
@@ -38,23 +41,40 @@ public class RandomArrayTotal {
 		System.out.println(total(numbers, 5));
 		System.out.println();
 
-//		TreeSet<Integer> threads = new TreeSet<>();
-//		Collections.addAll(threads, 1, 2, 3, 5, 8, 20);
-//
-//		int size = 100;
-//		double fastest = Double.MAX_VALUE;
-//
-//		for (Integer thread : threads) {
-//			fastest = Math.min(fastest, benchmark(size, thread));
-//		}
-//
-//		System.out.println();
-//
-//		for (Integer thread : threads.descendingSet()) {
-//			fastest = Math.min(fastest, benchmark(size, thread));
-//		}
-//
-//		System.out.printf("%nFastest average: %.06f", fastest);
+		/*
+		TreeSet<Integer> threads = new TreeSet<>();
+		Collections.addAll(threads, 1, 2, 3, 5, 8, 20);
+
+		int size = 100; // 10000000
+		System.out.printf("calculating sum for %d random numbers...%n", size);
+
+		double minBestTime = Double.MAX_VALUE;
+		int minThreads = 0;
+
+		for (Integer thread : threads) {
+			double bestTime = benchmark(size, thread);
+
+			if (bestTime < minBestTime) {
+				minBestTime = bestTime;
+				minThreads = thread;
+			}
+		}
+
+		System.out.println();
+
+		for (Integer thread : threads.descendingSet()) {
+			double bestTime = benchmark(size, thread);
+
+			if (bestTime < minBestTime) {
+				minBestTime = bestTime;
+				minThreads = thread;
+			}
+		}
+
+		System.out.printf(
+				"%nFastest minimum: %02d threads in %.06f seconds",
+				minThreads, minBestTime);
+		*/
 	}
 
 	private static double benchmark(int size, int threads) throws InterruptedException {
@@ -68,6 +88,7 @@ public class RandomArrayTotal {
 
 		Instant start;
 		Duration elapsed;
+		Duration minimum = ChronoUnit.FOREVER.getDuration();
 
 		for (int i = 0; i < warmup; i++) {
 			placeholder = Math.max(placeholder, total(numbers, threads));
@@ -77,16 +98,19 @@ public class RandomArrayTotal {
 			start = Instant.now();
 			placeholder = Math.max(placeholder, total(numbers, threads));
 			elapsed = Duration.between(start, Instant.now());
+			minimum = minimum.compareTo(elapsed) > 0 ? elapsed : minimum;
 			average += elapsed.toNanos();
 		}
 
 		average /= runs;
 		average /= Duration.ofSeconds(1).toNanos();
 
-		System.out.printf(
-				"%.06f seconds average for %d numbers and %02d threads (placeholder %d)%n",
-				average, size, threads, placeholder);
+		double seconds = (double) minimum.toNanos() / Duration.ofSeconds(1).toNanos();
 
-		return average;
+		System.out.printf(
+				"%02d threads: %.06f min, %.06f avg seconds (sum: %d) %n",
+				threads, seconds, average, placeholder);
+
+		return seconds;
 	}
 }
