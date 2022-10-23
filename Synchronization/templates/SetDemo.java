@@ -108,7 +108,7 @@ public class SetDemo {
 		long warmupTotal = 0;
 		warmupTotal += LongStream.of(warmup1).sum();
 		warmupTotal += LongStream.of(warmup2).sum();
-//		warmupTotal += LongStream.of(warmup3).sum();
+		warmupTotal += LongStream.of(warmup3).sum();
 
 		System.out.printf("Warmup lasted for %.4f seconds.%n", warmupTotal / nanos);
 
@@ -124,11 +124,11 @@ public class SetDemo {
 
 		double average1 = LongStream.of(timed1).sum() / nanos / TIMED;
 		double average2 = LongStream.of(timed2).sum() / nanos / TIMED;
-//		double average3 = LongStream.of(timed3).sum() / nanos / TIMED;
+		double average3 = LongStream.of(timed3).sum() / nanos / TIMED;
 
 		double minimum1 = LongStream.of(timed1).min().getAsLong() / nanos;
 		double minimum2 = LongStream.of(timed2).min().getAsLong() / nanos;
-//		double minimum3 = LongStream.of(timed3).min().getAsLong() / nanos;
+		double minimum3 = LongStream.of(timed3).min().getAsLong() / nanos;
 
 		String format = "%15s : %.5f min, %.5f avg seconds%n";
 		System.out.printf(format, set1.getClass().getSimpleName(), minimum1, average1);
