@@ -147,8 +147,8 @@ public class LockDemo {
 	 * @throws InterruptedException if interrupted
 	 */
 	public static void main(String[] args) throws InterruptedException {
-		LockDemo demo1 = new LockDemo("A");
-		LockDemo demo2 = new LockDemo("B");
+		LockDemo a = new LockDemo("A");
+		LockDemo b = new LockDemo("B");
 
 		// Wait a little bit, hopefully the threads get a chance to get their locks
 		try {
@@ -159,14 +159,14 @@ public class LockDemo {
 		}
 
 		System.out.println();
-		System.out.println("A1 State: " + demo1.worker1.getState());
-		System.out.println("A2 State: " + demo1.worker2.getState());
-		System.out.println("B1 State: " + demo2.worker1.getState());
-		System.out.println("B2 State: " + demo2.worker2.getState());
+		System.out.println("A1 State: " + a.worker1.getState());
+		System.out.println("A2 State: " + a.worker2.getState());
+		System.out.println("B1 State: " + b.worker1.getState());
+		System.out.println("B2 State: " + b.worker2.getState());
 		System.out.println();
 
-		demo1.joinAll();
-		demo2.joinAll();
+		a.joinAll();
+		b.joinAll();
 	}
 
 	/**
