@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
  *
  */
 public class BoundedBuffer<E> {
-	private Object[] buffer;
+	private E[] buffer;
 
 	private int beg;
 	private int end;
@@ -59,6 +59,7 @@ public class BoundedBuffer<E> {
 		return null; // TODO Fix return
 	}
 
+	@SafeVarargs
 	private static <E> E[] newArray(int length, E... unused) {
 		return Arrays.copyOf(unused, length);
 	}
