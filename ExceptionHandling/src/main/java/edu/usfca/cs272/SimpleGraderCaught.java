@@ -13,8 +13,8 @@ public class SimpleGraderCaught {
 	 * A simple method to calculate the percentage given the total points earned
 	 * versus the total points possible.
 	 *
-	 * Note we explicitly declare the thrown exceptions, which helps make sure
-	 * other developers are aware they can be thrown.
+	 * Note we explicitly declare the thrown exceptions, which helps make sure other
+	 * developers are aware they can be thrown.
 	 *
 	 * @param earned points earned
 	 * @param possible points possible
@@ -23,8 +23,7 @@ public class SimpleGraderCaught {
 	 * @throws ArithmeticException if possible is 0
 	 * @throws IllegalArgumentException if earned or possible is negative
 	 */
-	public static int calcPercentage(int earned, int possible)
-			throws ArithmeticException, IllegalArgumentException {
+	public static int calcPercentage(int earned, int possible) throws ArithmeticException, IllegalArgumentException {
 		if (earned < 0 || possible <= 0) {
 			throw new IllegalArgumentException("Values must be non-negative.");
 		}
@@ -67,9 +66,9 @@ public class SimpleGraderCaught {
 	}
 
 	/*
-	 * This is better... the code inside the try block is back to the easy-to-
-	 * read and understand version. However, the output when things go wrong is
-	 * the same, we will have to make sure the close the scanner, and we still
-	 * have a bug that can throw an exception.
+	 * This is better... the code inside the try block is back to the easy-to- read
+	 * and understand version. However, the output when things go wrong is the same,
+	 * we will have to make sure the close the scanner, and we still have a bug that
+	 * can throw an exception.
 	 */
 }

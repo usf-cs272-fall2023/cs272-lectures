@@ -50,7 +50,7 @@ public class SimpleGraderResourceful {
 
 	/*
 	 * Much better! Resources are handled for us. No need to declare anything
-	 * outside of the try block, which helped catch our bug. And the console
-	 * output to the user is much more user-friendly!
+	 * outside of the try block, which helped catch our bug. And the console output
+	 * to the user is much more user-friendly!
 	 */
 }
