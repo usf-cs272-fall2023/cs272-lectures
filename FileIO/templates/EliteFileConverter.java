@@ -1,6 +1,8 @@
 package edu.usfca.cs272;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class EliteFileConverter {
@@ -31,8 +33,12 @@ public class EliteFileConverter {
 		throw new UnsupportedOperationException("Not yet implemented.");
 	}
 
-	public static void toLeetLists(Path input, Path output)
-			throws IOException {
+	public static void toLeetStrings(Path input, Path output) throws IOException {
+		// TODO Implement toLeetSpeakMemoryIntensive method
+		throw new UnsupportedOperationException("Not yet implemented.");
+	}
+
+	public static void toLeetLists(Path input, Path output) throws IOException {
 		// TODO Implement toLeetSpeakMemoryIntensive method
 		throw new UnsupportedOperationException("Not yet implemented.");
 	}

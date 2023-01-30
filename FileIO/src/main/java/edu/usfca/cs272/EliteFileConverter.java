@@ -123,6 +123,25 @@ public class EliteFileConverter {
 	 * @param output path to the output file
 	 * @throws IOException from {@link Files#readAllLines(Path)}
 	 */
+	public static void toLeetStrings(Path input, Path output) throws IOException {
+		// quote from api: "not intended for reading in large files"
+		String inputText = Files.readString(input, StandardCharsets.UTF_8);
+
+		// convert entire text all at once
+		String outputText = toLeet(inputText);
+
+		// write entire text to file
+		Files.writeString(output, outputText, StandardCharsets.UTF_8);
+	}
+
+	/**
+	 * Demonstrates a simple, but memory-intensive way to convert a text file to
+	 * 1337-speak.
+	 *
+	 * @param input path to the input file
+	 * @param output path to the output file
+	 * @throws IOException from {@link Files#readAllLines(Path)}
+	 */
 	public static void toLeetLists(Path input, Path output) throws IOException {
 		// quote from api: "not intended for reading in large files"
 		List<String> inputLines = Files.readAllLines(input, StandardCharsets.UTF_8);
@@ -197,9 +216,13 @@ public class EliteFileConverter {
 		String filename = EliteFileConverter.class.getSimpleName();
 		Path base = Path.of("src", "main", "java", "edu", "usfca", "cs272");
 		Path input = base.resolve(filename + ".java");
+
 		Path output = Path.of("out", filename + ".txt");
 
 		Files.createDirectories(output.getParent());
+
+//		toLeetStrings(input, output);
+//		toLeetLists(input, output);
 		toLeetBuffered(input, output);
 
 		// throwing exceptions in main result in stack trace console output
