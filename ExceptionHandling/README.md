@@ -7,7 +7,7 @@ These demos illustrate how to work with exceptions in Java.
 
 The following lecture slides and archived recordings may be useful:
 
-  - [Exception Handling](https://docs.google.com/presentation/d/e/2PACX-1vRMqQrt0IaiwZL5Du1KcQIONLkNXtnS6VR2FnRXBn1c84dMSleUuH6jl0OJNLtSMS_WujxCSow9UXcI/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=63e36a07-eee2-4432-836c-af950186c08d))
+  - [Exception Handling](https://docs.google.com/presentation/d/e/2PACX-1vRMqQrt0IaiwZL5Du1KcQIONLkNXtnS6VR2FnRXBn1c84dMSleUuH6jl0OJNLtSMS_WujxCSow9UXcI/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=fc1367c9-aa48-4e6d-82bf-afaf015097f9))
 
 The following archived recordings of the lecture code may be useful:
 
