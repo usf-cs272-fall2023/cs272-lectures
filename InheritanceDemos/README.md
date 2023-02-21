@@ -1,4 +1,4 @@
-Inheritance Topics
+Inheritance Demos
 =================================================
 
 These demos illustrate miscellaneous topics related to inheritance in Java.
@@ -7,8 +7,6 @@ These demos illustrate miscellaneous topics related to inheritance in Java.
 
 The following lecture slides and archived recordings may be useful:
 
-  - [Casting](https://docs.google.com/presentation/d/e/2PACX-1vQKZWkx3KuWfriEUZx8n3VWwWJwqq1MyiMoJwWqXPQ-B8HdsaaOZgMPQ3cwDhuBcahLrDz3jtNKoeH-/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4eab4121-1dad-40c5-a5a1-afa5013a671f))
-  - [Nested Classes](https://docs.google.com/presentation/d/e/2PACX-1vQGU98zYWhimyRP15CrqUGU3tCGrbD_HZyrgoO7plH9Bip026Qt6lBfMB4upYTsbbbA9zsAfUy2_762/pub?start=false&loop=false&delayms=3000)
   - [Generic Types](https://docs.google.com/presentation/d/e/2PACX-1vRczaRucL8_HpFU1hH8WY7TQr2XSplEUY78sBK9t-hTCIkDK9kDvAuVne569IHct2tDNG9724VeE92g/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8f3be91f-6e33-4838-ae40-afa5012f761c))
 
 The following archived recordings of the lecture code may be useful:
