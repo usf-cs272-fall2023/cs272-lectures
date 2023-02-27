@@ -29,6 +29,12 @@ public class StringSorter {
 
 		printList("Original", words);
 
+		Collections.shuffle(words);
+		printList("Shuffled", words);
+		
+		Collections.sort(words);
+		printList("Sorted", words);
+		
 		// TODO Fill in
 	}
 }
