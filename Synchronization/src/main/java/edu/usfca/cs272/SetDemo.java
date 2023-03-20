@@ -245,7 +245,7 @@ public class SetDemo {
 		// TURN OFF LOGGING BEFORE RUNNING THIS!
 		Configurator.setAllLevels(LogManager.getRootLogger().getName(), Level.OFF);
 
-		int size = 1000; // on my laptop, 10000 takes painfully long
+		int size = 1000; // on my system, 10000 takes painfully long
 		benchmark(size);
 	}
 }
