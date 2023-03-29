@@ -13,8 +13,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
 
 /**
  * This class demonstrates a slightly better option than
@@ -49,15 +51,11 @@ public class ExecutorDirectoryListing {
 			if (Files.isDirectory(path)) {
 				TaskManager manager = new TaskManager(paths);
 				manager.start(path);
-				manager.finish();
-
-				// trigger shutdown and wait until complete
-				// (other option is to reuse it)
-				manager.executor.shutdown();
-				manager.executor.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
+				manager.join();
 			}
 		}
 
+		log.debug("Returning {} paths", paths.size());
 		return paths;
 	}
 
@@ -111,11 +109,12 @@ public class ExecutorDirectoryListing {
 			public Task(Path path) {
 				this.path = path;
 				incrementPending();
-				log.debug("Task for {} created.", path);
+				log.trace("Created {}", path);
 			}
 
 			@Override
 			public void run() {
+				log.debug("Started {}", path);
 				Set<Path> local = new HashSet<>();
 
 				try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
@@ -133,7 +132,7 @@ public class ExecutorDirectoryListing {
 					throw new UncheckedIOException(ex);
 				}
 
-				log.debug("Task for {} finished.", path);
+				log.debug("Finished {}", path);
 				decrementPending();
 			}
 		}
@@ -145,17 +144,15 @@ public class ExecutorDirectoryListing {
 		 * @throws InterruptedException from {@link Object#wait()}
 		 */
 		private void finish() throws InterruptedException {
-			log.debug("Waiting for work...");
-
-			while (pending.get() > 0) {
-				// we still need to synchronize our wait() and notifyAll()
-				synchronized (pending) {
+			// we still need to synchronize our wait() and notifyAll()
+			synchronized (pending) {
+				while (pending.get() > 0) {
+					log.trace("Waiting to finish (pending: {})", pending);
 					pending.wait();
 				}
-				log.debug("Woke up with pending at {}.", pending);
 			}
 
-			log.debug("Work finished.");
+			log.debug("Pending work finished");
 		}
 
 		/**
@@ -177,6 +174,19 @@ public class ExecutorDirectoryListing {
 				}
 			}
 		}
+
+		/**
+		 * Finishes pending work and then shutdown the work queue.
+		 * @throws InterruptedException if interrupted
+		 */
+		private void join() throws InterruptedException {
+			finish();
+
+			// trigger shutdown and wait until complete
+			// (other option is to reuse it)
+			executor.shutdown();
+			executor.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
+		}
 	}
 
 	/**
@@ -187,10 +197,10 @@ public class ExecutorDirectoryListing {
 	 * @throws IOException from {@link SerialDirectoryListing#list(Path)}
 	 */
 	public static void main(String[] args) throws InterruptedException, IOException {
+		Configurator.setAllLevels("edu.usfca.cs272.SerialDirectoryListing", Level.OFF);
 		Path path = Path.of(".");
 		Set<Path> actual = list(path);
 		Set<Path> expected = SerialDirectoryListing.list(path);
-
 		System.out.println(actual.equals(expected));
 	}
 }

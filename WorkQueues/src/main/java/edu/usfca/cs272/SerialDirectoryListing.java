@@ -7,6 +7,9 @@ import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * Recursively generates a directory listing using single-threading.
  *
@@ -18,6 +21,9 @@ public class SerialDirectoryListing {
 	 * The term "serial" in this context refers to code run sequentially (one at a
 	 * time), rather than concurrently (multiple at a time).
 	 */
+
+	/** Logger to use for this class. */
+	public static final Logger log = LogManager.getLogger();
 
 	/**
 	 * Returns a directory listing for the given path. The original path and all
@@ -38,6 +44,7 @@ public class SerialDirectoryListing {
 			}
 		}
 
+		log.debug("Returning {} paths", paths.size());
 		return paths;
 	}
 
@@ -50,6 +57,8 @@ public class SerialDirectoryListing {
 	 * @throws IOException from {@link Files#newDirectoryStream(Path)}
 	 */
 	private static void list(Path path, Set<Path> paths) throws IOException {
+		log.debug("Started {}", path);
+
 		try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
 			for (Path current : stream) {
 				paths.add(current);
@@ -59,6 +68,8 @@ public class SerialDirectoryListing {
 				}
 			}
 		}
+
+		log.debug("Finished {}", path);
 	}
 
 	/**

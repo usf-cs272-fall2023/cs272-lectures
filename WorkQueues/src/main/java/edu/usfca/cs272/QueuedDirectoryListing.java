@@ -8,8 +8,10 @@ import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
 
 /**
  * This class demonstrates a slightly better option than
@@ -24,7 +26,7 @@ import org.apache.logging.log4j.Logger;
  */
 public class QueuedDirectoryListing {
 	/** Logger to use for this class. */
-	private static final Logger log = LogManager.getLogger();
+	public static final Logger log = LogManager.getLogger();
 
 	/**
 	 * Returns a directory listing for the given path.
@@ -42,11 +44,11 @@ public class QueuedDirectoryListing {
 			if (Files.isDirectory(path)) {
 				TaskManager manager = new TaskManager(paths);
 				manager.start(path);
-				manager.finish();
-				manager.tasks.shutdown();
+				manager.join(); // use our new join method to finish *and* shutdown
 			}
 		}
 
+		log.debug("Returning {} paths", paths.size());
 		return paths;
 	}
 
@@ -100,11 +102,12 @@ public class QueuedDirectoryListing {
 			public Task(Path path) {
 				this.path = path;
 				incrementPending();
-				log.debug("Task for {} created.", path);
+				log.trace("Created {}", path);
 			}
 
 			@Override
 			public void run() {
+				log.debug("Started {}", path);
 				Set<Path> local = new HashSet<>();
 
 				try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
@@ -124,7 +127,7 @@ public class QueuedDirectoryListing {
 					throw new UncheckedIOException(ex);
 				}
 
-				log.debug("Task for {} finished.", path);
+				log.debug("Finished {}", path);
 				decrementPending();
 			}
 		}
@@ -136,14 +139,12 @@ public class QueuedDirectoryListing {
 		 * @throws InterruptedException from {@link Thread#wait()}
 		 */
 		private synchronized void finish() throws InterruptedException {
-			log.debug("Waiting for work...");
-
 			while (pending > 0) {
+				log.trace("Waiting to finish (pending: {})", pending);
 				this.wait();
-				log.debug("Woke up with pending at {}.", pending);
 			}
 
-			log.debug("Work finished.");
+			log.debug("Pending work finished");
 		}
 
 		/**
@@ -165,6 +166,15 @@ public class QueuedDirectoryListing {
 				this.notifyAll();
 			}
 		}
+
+		/**
+		 * Finishes pending work and then shutdown the work queue.
+		 * @throws InterruptedException if interrupted
+		 */
+		private void join() throws InterruptedException {
+			finish();
+			tasks.shutdown();
+		}
 	}
 
 	/**
@@ -175,10 +185,10 @@ public class QueuedDirectoryListing {
 	 * @throws IOException from {@link SerialDirectoryListing#list(Path)}
 	 */
 	public static void main(String[] args) throws InterruptedException, IOException {
+		Configurator.setAllLevels("edu.usfca.cs272.SerialDirectoryListing", Level.OFF);
 		Path path = Path.of(".");
 		Set<Path> actual = list(path);
 		Set<Path> expected = SerialDirectoryListing.list(path);
-
 		System.out.println(actual.equals(expected));
 	}
 

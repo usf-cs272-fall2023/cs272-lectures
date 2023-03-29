@@ -8,22 +8,24 @@ import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
 
 /**
  * This class demonstrates a slightly better option than
  * {@link BlockingDirectoryListing} for making a multithreaded version of
- * {@link SerialDirectoryListing}. However, there are still performance
- * issues caused by creating so many little worker thread objects, which have to
- * be cleaned up by our garbage collector later.
+ * {@link SerialDirectoryListing}. However, there are still performance issues
+ * caused by creating so many little worker thread objects, which have to be
+ * cleaned up by our garbage collector later.
  *
  * @author CS 272 Software Development (University of San Francisco)
  * @version Spring 2023
  */
 public class ThreadedDirectoryListing {
 	/** Logger to use for this class. */
-	private static final Logger log = LogManager.getLogger();
+	public static final Logger log = LogManager.getLogger();
 
 	/**
 	 * Returns a directory listing for the given path.
@@ -45,12 +47,13 @@ public class ThreadedDirectoryListing {
 			}
 		}
 
+		log.debug("Returning {} paths", paths.size());
 		return paths;
 	}
 
 	/**
-	 * Instead of a static worker class, we will create a task manager that can
-	 * keep track of pending work.
+	 * Instead of a static worker class, we will create a task manager that can keep
+	 * track of pending work.
 	 */
 	private static class TaskManager {
 		/** The shared set of all paths found thus far. */
@@ -97,18 +100,19 @@ public class ThreadedDirectoryListing {
 			public Worker(Path path) {
 				this.path = path;
 
-				// now we have to keep track of when we have new "pending" or
-				// "unfinished" work
+				// Now we have to keep track of when we have new "pending" or "unfinished" work
 				incrementPending();
 
-				log.debug("Worker for {} created.", path);
+				log.trace("Created {}", path);
 			}
 
 			@Override
 			public void run() {
+				log.debug("Started {}", path);
+
 				/*
-				 * To avoid a synchronized block within a loop, we will create data that
-				 * is "local" to this thread (i.e. not shared).
+				 * To avoid a synchronized block within a loop, we will create data that is
+				 * "local" to this thread (i.e. not shared).
 				 */
 				Set<Path> local = new HashSet<>();
 
@@ -122,18 +126,17 @@ public class ThreadedDirectoryListing {
 							worker.start();
 
 							/*
-							 * Note that we no longer need to join() on the worker. That means
-							 * other threads can keep on going without having to wait for each
-							 * other. Only main needs to wait for all the work to be done.
+							 * Note that we no longer need to join() on the worker. That means other threads
+							 * can keep on going without having to wait for each other. Only main needs to
+							 * wait for all the work to be done.
 							 */
 						}
 					}
 
 					/*
-					 * Now, we will block and make our big update. It is less likely
-					 * threads will block because they will finish their work at different
-					 * times, and we spend less time locking/unlocking and hence less time
-					 * causing blocking
+					 * Now, we will block and make our big update. It is less likely threads will
+					 * block because they will finish their work at different times, and we spend
+					 * less time locking/unlocking and hence less time causing blocking
 					 */
 					synchronized (paths) {
 						paths.addAll(local);
@@ -143,7 +146,7 @@ public class ThreadedDirectoryListing {
 					throw new UncheckedIOException(ex);
 				}
 
-				log.debug("Worker for {} finished.", path);
+				log.debug("Finished {}", path);
 
 				// almost done! now we can indicate we have 1 less "pending" work
 				decrementPending();
@@ -156,21 +159,20 @@ public class ThreadedDirectoryListing {
 		 */
 
 		/**
-		 * Rather than having threads wait for each other (undoing our
-		 * multithreading), we will wait until all pending work is completed.
+		 * Rather than having threads wait for each other (undoing our multithreading),
+		 * we will wait until all pending work is completed.
 		 *
 		 * @throws InterruptedException from {@link Thread#wait()}
 		 */
 		private synchronized void finish() throws InterruptedException {
-			log.debug("Waiting for work...");
-
 			while (pending > 0) {
-				// if we put a wait() here... where does the notifyAll() go?
+				log.trace("Waiting to finish (pending: {})", pending);
+
+				// If we put a wait() here... where does the notifyAll() go?
 				this.wait();
-				log.debug("Woke up with pending at {}.", pending);
 			}
 
-			log.debug("Work finished.");
+			log.debug("Pending work finished");
 		}
 
 		/**
@@ -189,8 +191,8 @@ public class ThreadedDirectoryListing {
 			pending--;
 
 			/*
-			 * How often should we call notifyAll()? We don't want to overdo it. (See
-			 * log if we take out the if pending == 0.)
+			 * How often should we call notifyAll()? We don't want to overdo it. (See log if
+			 * we take out the if pending == 0.)
 			 */
 
 			if (pending == 0) {
@@ -207,10 +209,10 @@ public class ThreadedDirectoryListing {
 	 * @throws InterruptedException from {@link #list(Path)}
 	 */
 	public static void main(String[] args) throws IOException, InterruptedException {
+		Configurator.setAllLevels("edu.usfca.cs272.SerialDirectoryListing", Level.OFF);
 		Path path = Path.of(".");
 		Set<Path> actual = list(path);
 		Set<Path> expected = SerialDirectoryListing.list(path);
-
 		System.out.println(actual.equals(expected));
 	}
 }
