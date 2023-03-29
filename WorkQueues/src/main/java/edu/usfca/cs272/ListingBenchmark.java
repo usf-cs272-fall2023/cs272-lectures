@@ -103,6 +103,18 @@ public class ListingBenchmark {
 
 		System.out.println();
 		System.out.println(order);
+
+		System.out.println();
+
+		var iterator = benchmarks.iterator();
+		Benchmarker fastest = iterator.next();
+
+		while (iterator.hasNext()) {
+			Benchmarker current = iterator.next();
+			double speedup = (double) current.minimum.toNanos() / fastest.minimum.toNanos();
+			String format = "%s has %.1fx speedup over %s%n";
+			System.out.printf(format, fastest.name, speedup, current.name);
+		}
 	}
 
 	/**
