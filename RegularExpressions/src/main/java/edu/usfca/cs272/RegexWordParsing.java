@@ -42,7 +42,7 @@ public class RegexWordParsing extends RegexHelper {
 		// 0000000000000000000000000000000000000000000000000_
 		// Note: Does not work; too greedy.
 		regex = "\\b.+\\b";
-		console.println("Words (Using Bounaries, Greedy): " + regex);
+		console.println("Words (Using Boundaries, Greedy): " + regex);
 		showMatches(text, regex);
 		console.println();
 
