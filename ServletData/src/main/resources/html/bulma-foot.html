@@ -1,0 +1,44 @@
+    </div>
+  </section> <!-- end messages -->
+
+  <!-- show form -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title">Add Message</h2>
+
+      <form method="${method}" action="${action}">
+        <div class="field">
+          <label class="label" for="name">Name</label>
+          <div class="control has-icons-left">
+            <input class="input" type="text" name="name" id="name" placeholder="Enter your name here.">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="message">Message</label>
+          <div class="control">
+            <textarea class="textarea" name="message" id="message" placeholder="Enter your message here."></textarea>
+          </div>
+        </div>
+
+        <div class="control">
+          <button class="button is-primary" type="submit">
+            <i class="fas fa-comment"></i>
+            &nbsp;Post Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>This request was handled by thread ${thread}.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>${title}</title>
+</head>
+
+<body>
+  <h1>Message Board</h1>
+  
+  ${messages}
+
+  <form method="${method}" action="${action}">
+    <p>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" maxlength="50" size="20">
+    </p>
+    
+    <p>
+      <label for="message">Message:</label>
+      <input type="text" name="message" id="message" maxlength="100" size="60">
+    </p>
+    
+    <p><input type="submit" value="Post Message"></p>
+  </form>
+  
+  <p>This request was handled by thread ${thread}.</p>
+
+</body>
+</html>
