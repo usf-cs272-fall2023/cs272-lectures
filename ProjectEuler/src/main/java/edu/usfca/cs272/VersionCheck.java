@@ -13,7 +13,7 @@ public class VersionCheck {
 	 * @param args unused
 	 */
 	public static void main(String[] args) {
-		// Switch Expressions, available from Java 14+.
+		// switch expressions, available from Java 14+.
 		String name = switch (args.length) {
 			case 0:
 				yield "anonymous";
@@ -23,7 +23,7 @@ public class VersionCheck {
 
 		System.out.println("Hello, " + name + "!");
 
-		// Multiple-line String, available from Java 15+.
+		// multiple-line string, available from Java 15+.
 		String hello = """
 				Hello,
 				World!
@@ -31,7 +31,7 @@ public class VersionCheck {
 
 		System.out.println(hello);
 
-		// Record types, available from Java 16+.
+		// record types, available from Java 16+.
 		record Person(String name) {
 		}
 
@@ -39,7 +39,7 @@ public class VersionCheck {
 
 		System.out.println("Hello, " + person.name() + "!");
 
-		// Sealed class, available from Java 17+.
+		// sealed class, available from Java 17+.
 		Shape shape = new Circle();
 		shape.hello();
 	}

@@ -15,8 +15,7 @@ package edu.usfca.cs272;
  */
 public class Problem1b {
 	/**
-	 * Sums together non-negative multiples of 3 and 5 less than the maximum
-	 * value.
+	 * Sums together non-negative multiples of 3 and 5 less than the maximum value.
 	 *
 	 * @param max maximum value to consider
 	 * @return sum of multiples of 3 and 5 less than the maximum value

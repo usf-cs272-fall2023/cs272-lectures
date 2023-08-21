@@ -41,8 +41,7 @@ public class Problem1d {
 	 *
 	 * @param value multiple to calculate
 	 * @param max maximum value
-	 * @param multiples set to add multiples of {@code value} less than
-	 *   {@code max}
+	 * @param multiples set to add multiples of {@code value} less than {@code max}
 	 */
 	public static void addMultiples(int value, int max, Set<Integer> multiples) {
 		for (int i = value; i < max; i += value) {
@@ -51,9 +50,9 @@ public class Problem1d {
 	}
 
 	/**
-	 * Sums all multiples of the values, up until the maximum value specified.
-	 * Takes into account numbers that may be multiples of several values. For
-	 * example, 15 is a multiple of 3 and 5.
+	 * Sums all multiples of the values, up until the maximum value specified. Takes
+	 * into account numbers that may be multiples of several values. For example, 15
+	 * is a multiple of 3 and 5.
 	 *
 	 * @param values multiples to calculate
 	 * @param max maximum value
@@ -100,8 +99,7 @@ public class Problem1d {
 				int value = Integer.parseInt(args[i]);
 
 				if (value < 0) {
-					throw new NumberFormatException(
-							"Integer value must be non-negative.");
+					throw new NumberFormatException("Integer value must be non-negative.");
 				}
 
 				values.add(value);
@@ -127,14 +125,14 @@ public class Problem1d {
 	 * So, you can see how much object-oriented design can increase the size of
 	 * programs. Why in the world would we want to do this?
 	 *
-	 * It is only useful when (a) you have large and complex problems, and (b)
-	 * there is ample opportunity to reuse your solutions to those problems. The
-	 * more often you reuse your code, the more you get out of the object-oriented
+	 * It is only useful when (a) you have large and complex problems, and (b) there
+	 * is ample opportunity to reuse your solutions to those problems. The more
+	 * often you reuse your code, the more you get out of the object-oriented
 	 * design. But, when have you EVER reused code so far?
 	 *
 	 * Guess what... you will now! Almost all of the classes you create in this
-	 * class you will reuse across homework and project assignments. And, we have
-	 * a problem that is complex and large enough to warrant object-oriented
-	 * design: a search engine.
+	 * class you will reuse across homework and project assignments. And, we have a
+	 * problem that is complex and large enough to warrant object-oriented design: a
+	 * search engine.
 	 */
 }

@@ -37,9 +37,9 @@ public class Problem1e {
 	}
 
 	/**
-	 * Sums all multiples of the values, up until the maximum value specified.
-	 * Takes into account numbers that may be multiples of several values. For
-	 * example, 15 is a multiple of 3 and 5.
+	 * Sums all multiples of the values, up until the maximum value specified. Takes
+	 * into account numbers that may be multiples of several values. For example, 15
+	 * is a multiple of 3 and 5.
 	 *
 	 * @param values multiples to calculate
 	 * @param max maximum value

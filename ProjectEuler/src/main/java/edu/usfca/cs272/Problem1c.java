@@ -76,9 +76,9 @@ public class Problem1c {
 	}
 
 	/*
-	 * Our main() method is now more generalized and reusable, but look at how
-	 * much code we had to create to deal with user input. Since you cannot trust
-	 * user input, expect to have to add quite a bit of code to validate the input
-	 * before using it!
+	 * Our main() method is now more generalized and reusable, but look at how much
+	 * code we had to create to deal with user input. Since you cannot trust user
+	 * input, expect to have to add quite a bit of code to validate the input before
+	 * using it!
 	 */
 }
