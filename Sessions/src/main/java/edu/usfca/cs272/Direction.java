@@ -5,7 +5,7 @@ package edu.usfca.cs272;
  * directions form the points of the compass.
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public enum Direction {
 	/** West cardinal direction. */

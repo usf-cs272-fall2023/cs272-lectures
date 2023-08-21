@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * A quick demo of how to use groups in regular expressions.
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class RegexGroups extends RegexHelper {
 	/*

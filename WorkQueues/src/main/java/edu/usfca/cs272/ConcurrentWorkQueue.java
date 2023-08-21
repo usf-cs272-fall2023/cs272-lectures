@@ -15,7 +15,7 @@ import java.util.concurrent.locks.ReentrantLock;
  *   Theory and Practice: Thread Pools and Work Queues</a>
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class ConcurrentWorkQueue {
 	/** Workers that wait until work (or tasks) are available. */

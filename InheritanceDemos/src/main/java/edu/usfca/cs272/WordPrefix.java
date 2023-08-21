@@ -12,7 +12,7 @@ import java.util.TreeSet;
  * try) used for some forms of autocompletion and spelling.
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class WordPrefix implements WordGroup<String> {
 	/**

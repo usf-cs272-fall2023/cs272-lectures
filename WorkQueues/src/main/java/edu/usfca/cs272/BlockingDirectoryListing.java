@@ -20,7 +20,7 @@ import org.apache.logging.log4j.core.config.Configurator;
  * the multithreading aspects.
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class BlockingDirectoryListing {
 	/** Logger to use for this class. */

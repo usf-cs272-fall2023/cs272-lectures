@@ -12,7 +12,7 @@ package edu.usfca.cs272;
  *   SEI CERT Oracle Coding Standard for Java</a>
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class LockDemo {
 	/** The first worker thread. */

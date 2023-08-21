@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * Class to help debug and understand regular expressions.
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class RegexHelper {
 	/** Example string for testing regular expressions. **/

@@ -12,7 +12,7 @@ import org.eclipse.jetty.servlet.ServletHandler;
  * and dynamic content.
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class SimpleFileServer {
 	/** The hard-coded port to run this server. */

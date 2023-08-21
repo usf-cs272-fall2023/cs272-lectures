@@ -9,7 +9,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
  * as well as how to initialize servlets when you need to call its constructor.
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class MessageServer {
 	/** The hard-coded port to run this server. */

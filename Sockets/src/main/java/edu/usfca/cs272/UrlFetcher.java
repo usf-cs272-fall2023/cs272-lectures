@@ -19,7 +19,7 @@ import java.util.Map;
  * from a URL on the web.
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class UrlFetcher {
 	// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers

@@ -21,7 +21,7 @@ import jakarta.servlet.http.HttpServletResponse;
  * regarding cross-site scripting (XSS) attacks.
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class HelloServer {
 	/** The hard-coded port to run this server. Should make configurable! */

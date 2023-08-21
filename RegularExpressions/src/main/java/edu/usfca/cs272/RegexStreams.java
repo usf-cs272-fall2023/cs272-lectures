@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * to replace substrings.
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class RegexStreams {
 	/**

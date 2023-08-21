@@ -24,7 +24,7 @@ import javax.net.ssl.SSLSocketFactory;
  * {@link URLConnection} to fetch the headers and content from a URL on the web.
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class HttpsFetcher {
 	/**

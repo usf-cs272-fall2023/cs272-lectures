@@ -34,7 +34,7 @@ import jakarta.servlet.http.HttpServletResponse;
  * @see CookieLandingServlet
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class CookieVisitServlet extends HttpServlet {
 	/** Class version for serialization, in [YEAR][TERM] format (unused). */

@@ -34,7 +34,7 @@ import jakarta.servlet.http.HttpServletResponse;
  * @see MessageServer
  *
  * @author CS 272 Software Development (University of San Francisco)
- * @version Spring 2023
+ * @version Fall 2023
  */
 public class MessageServlet extends HttpServlet {
 	/** The logger to use for this servlet. */
