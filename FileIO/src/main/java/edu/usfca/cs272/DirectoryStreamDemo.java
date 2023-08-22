@@ -73,6 +73,8 @@ public class DirectoryStreamDemo {
 
 			// start directory traversal
 			traverseDirectory(start);
+
+			// what happens when you swap the print and traverse methods?
 		}
 		else {
 			// output the file path and file size in bytes

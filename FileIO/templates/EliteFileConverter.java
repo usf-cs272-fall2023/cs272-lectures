@@ -9,7 +9,7 @@ public class EliteFileConverter {
 	public static char toLeet(char letter) {
 		boolean random = Math.random() < 0.5;
 
-		// https://docs.oracle.com/en/java/javase/15/language/switch-expressions.html
+		// https://docs.oracle.com/en/java/javase/17/language/switch-expressions.html
 		return switch (letter) {
 			case 'a', 'A' -> '\0'; // TODO Implement this case
 			case 'b', 'B' -> '8';
@@ -49,7 +49,7 @@ public class EliteFileConverter {
 	}
 
 	public static void main(String[] args) throws Exception {
-		// https://docs.oracle.com/en/java/javase/15/text-blocks/index.html
+		// https://docs.oracle.com/en/java/javase/17/language/text-blocks.html
 		String text = ""; // TODO Fill in value
 
 		System.out.println(text);
