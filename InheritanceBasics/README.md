@@ -29,8 +29,8 @@ The following official [Java Tutorials](http://docs.oracle.com/javase/tutorial/i
 The following documentation may be useful:
 
   - [Glossary of Terms](https://docs.oracle.com/javase/tutorial/information/glossary.html)
-  - [Collections Framework Overview](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/doc-files/coll-overview.html)
+  - [Collections Framework Overview](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/doc-files/coll-overview.html)
 
-The following classes from the [Java API](https://www.cs.usfca.edu/~cs272/javadoc/api/) may be useful:
+The following classes from the [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/) may be useful:
 
-  - [Collection](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/Collection.html)
+  - [Collection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html)

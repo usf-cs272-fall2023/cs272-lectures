@@ -31,10 +31,10 @@ The following official [Java Tutorials](http://docs.oracle.com/javase/tutorial/i
   - [The Java Tutorials - Lesson: Working with URLs](https://docs.oracle.com/javase/tutorial/networking/urls/index.html)
   - [The Java Tutorials - Lesson: All About Sockets](https://docs.oracle.com/javase/tutorial/networking/sockets/index.html)
 
-The following resources from the [Java API](https://www.cs.usfca.edu/~cs272/javadoc/api/index.html) may be useful:
+The following resources from the [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/index.html) may be useful:
 
-  - [URL](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/net/URL.html)
-  - [URI](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/net/URI.html)
-  - [URLConnection](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/net/URLConnection.html)
-  - [Socket](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/net/Socket.html)
-  - [ServerSocket](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/net/ServerSocket.html)
+  - [URL](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URL.html)
+  - [URI](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URI.html)
+  - [URLConnection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URLConnection.html)
+  - [Socket](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/Socket.html)
+  - [ServerSocket](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/ServerSocket.html)

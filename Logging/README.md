@@ -25,7 +25,7 @@ The following [CS Tutoring Center](https://tutoringcenter.cs.usfca.edu/resources
 
 ## Official Resources ##
 
-The following resources from the [Java API](https://www.cs.usfca.edu/~cs272/javadoc/api/) may be useful:
+The following resources from the [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/) may be useful:
 
   - [Package java.util.logging](https://www.cs.usfca.edu/~cs212/javadoc/api/java.logging/java/util/logging/package-summary.html)
 

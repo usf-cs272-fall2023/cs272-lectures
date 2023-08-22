@@ -25,7 +25,7 @@ The following official [Java Tutorials](http://docs.oracle.com/javase/tutorial/i
 
 :warning: The Java Tutorials are written for Java 8. They are still relevant, but may not reflect the latest features in Java.
 
-The following classes from the [Java API](https://www.cs.usfca.edu/~cs272/javadoc/api/) may be useful:
+The following classes from the [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/) may be useful:
 
-  - [Comparable](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/lang/Comparable.html)
-  - [Comparator](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/Comparator.html)
+  - [Comparable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html)
+  - [Comparator](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Comparator.html)

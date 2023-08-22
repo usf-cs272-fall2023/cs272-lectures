@@ -30,19 +30,19 @@ The following official [Java Tutorials](http://docs.oracle.com/javase/tutorial/i
 
 The following documentation may be useful:
 
-- [The Collections Framework](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/doc-files/coll-overview.html)
+- [The Collections Framework](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/doc-files/coll-overview.html)
 
-The following classes from the [Java API](https://www.cs.usfca.edu/~cs272/javadoc/api/) may be useful:
+The following classes from the [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/) may be useful:
 
-- [Arrays](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/Arrays.html)
-- [Collection](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/Collection.html)
-- [Collections](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/Collections.html)
-- [List](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/List.html)
-- [ArrayList](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/ArrayList.html)
-- [LinkedList](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/LinkedList.html)
-- [Set](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/Set.html)
-- [HashSet](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/HashSet.html)
-- [TreeSet](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/TreeSet.html)
-- [Map](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/Map.html)
-- [HashMap](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/HashMap.html)
-- [TreeMap](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/TreeMap.html)
+- [Arrays](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html)
+- [Collection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html)
+- [Collections](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html)
+- [List](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html)
+- [ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html)
+- [LinkedList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/LinkedList.html)
+- [Set](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html)
+- [HashSet](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashSet.html)
+- [TreeSet](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TreeSet.html)
+- [Map](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html)
+- [HashMap](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html)
+- [TreeMap](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TreeMap.html)

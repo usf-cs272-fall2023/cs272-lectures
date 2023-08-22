@@ -33,6 +33,6 @@ The following documentation may be useful:
   - [Java Language Specification - Lambda Expressions](https://docs.oracle.com/javase/specs/jls/se17/html/jls-15.html#jls-15.27)
   - [Java Language Updates](https://docs.oracle.com/en/java/javase/17/language/index.html)
 
-The following classes from the [Java API](https://www.cs.usfca.edu/~cs272/javadoc/api/) may be useful:
+The following classes from the [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/) may be useful:
 
-  - [Package java.util.function](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/util/function/package-summary.html)
+  - [Package java.util.function](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)

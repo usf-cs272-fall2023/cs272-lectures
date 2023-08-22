@@ -25,7 +25,7 @@ The following official [Java Tutorials](http://docs.oracle.com/javase/tutorial/i
 
 :warning: The Java Tutorials are written for Java 8. They are still relevant, but may not reflect the latest features in Java.
 
-The following classes from the [Java API](https://www.cs.usfca.edu/~cs272/javadoc/api/) may be useful:
+The following classes from the [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/) may be useful:
 
-  - [Exception](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/lang/Exception.html)
-  - [RuntimeException](https://www.cs.usfca.edu/~cs272/javadoc/api/java.base/java/lang/RuntimeException.html)
+  - [Exception](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html)
+  - [RuntimeException](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html)
