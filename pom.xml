@@ -6,11 +6,30 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- properties changed via command line -->
+		<config.werror>false</config.werror>
+		<config.xlint>-Xlint:all</config.xlint>
+		<config.xdoclint>-Xdoclint:all/private</config.xdoclint>
+
+		<!-- project settings -->
 		<maven.compiler.release>17</maven.compiler.release>
-		<compileOptionXlint>-Xlint:all</compileOptionXlint>
-		<compileOptionXdoclint>-Xdoclint:all/private</compileOptionXdoclint>
-		<compileOptionFail>false</compileOptionFail>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- plugin versions (must be exact) -->
+		<versions.maven.compiler>3.11.0</versions.maven.compiler>
+
+		<!-- dependency versions -->
+		<versions.junit.jupiter>[5.10,6.0)</versions.junit.jupiter>
+		<versions.junit.launcher>[1.10,2.0)</versions.junit.launcher>
+
+		<versions.apache.opennlp>[2.3,3.0)</versions.apache.opennlp>
+		<versions.apache.log4j2>[2.20,3.0)</versions.apache.log4j2>
+		<versions.commons.lang3>[3.13,4.0)</versions.commons.lang3>
+		<versions.commons.text>[1.10,2.0)</versions.commons.text>
+
+		<versions.jakarta.servlet>[5.0,6.0)</versions.jakarta.servlet>
+		<versions.eclipse.jetty>[11.0.15,12.0)</versions.eclipse.jetty>
+		<versions.mariadb.jdbc>[3.1.4,4.0)</versions.mariadb.jdbc>
 	</properties>
 
 	<build>
@@ -18,38 +37,19 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version>
+				<version>${versions.maven.compiler}</version>
 
 				<configuration>
 					<compilerArgs>
-						<arg>${compileOptionXlint}</arg>
-						<arg>${compileOptionXdoclint}</arg>
+						<arg>${config.xlint}</arg>
+						<arg>${config.xdoclint}</arg>
 					</compilerArgs>
 
-					<failOnWarning>${compileOptionFail}</failOnWarning>
+					<failOnWarning>${config.werror}</failOnWarning>
 					<showWarnings>true</showWarnings>
 					<showDeprecation>true</showDeprecation>
 					<fork>true</fork>
 				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.1.2</version>
-
-				<configuration>
-					<runOrder>alphabetical</runOrder>
-					<excludes>
-						<exclude />
-					</excludes>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>3.1.2</version>
 			</plugin>
 		</plugins>
 	</build>
@@ -59,78 +59,79 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
-			<version>5.10.0</version>
+			<version>${versions.junit.jupiter}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-launcher</artifactId>
-			<version>1.10.0</version>
+			<version>${versions.junit.launcher}</version>
 		</dependency>
 
 		<!-- for stemming words -->
 		<dependency>
 			<groupId>org.apache.opennlp</groupId>
 			<artifactId>opennlp-tools</artifactId>
-			<version>2.3.0</version>
+			<version>${versions.apache.opennlp}</version>
 		</dependency>
 
 		<!-- for logging -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-			<version>2.20.0</version>
+			<version>${versions.apache.log4j2}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.20.0</version>
+			<version>${versions.apache.log4j2}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>2.20.0</version>
+			<version>${versions.apache.log4j2}</version>
 		</dependency>
 
 		<!-- for apache commons -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.13.0</version>
+			<version>${versions.commons.lang3}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-text</artifactId>
-			<version>1.10.0</version>
+			<version>${versions.commons.text}</version>
 		</dependency>
 
 		<!-- for jetty -->
 		<dependency>
 			<groupId>jakarta.servlet</groupId>
 			<artifactId>jakarta.servlet-api</artifactId>
-			<version>5.0.0</version>
+			<version>${versions.jakarta.servlet}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-server</artifactId>
-			<version>11.0.15</version>
+			<version>${versions.eclipse.jetty}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-servlet</artifactId>
-			<version>11.0.15</version>
+			<version>${versions.eclipse.jetty}</version>
 		</dependency>
 
 		<!-- for mariadb jdbc connection -->
 		<dependency>
 			<groupId>org.mariadb.jdbc</groupId>
 			<artifactId>mariadb-java-client</artifactId>
-			<version>3.1.4</version>
+			<version>${versions.mariadb.jdbc}</version>
 		</dependency>
 	</dependencies>
+
 </project>
