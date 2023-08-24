@@ -19,17 +19,18 @@
 		<versions.maven.compiler>3.11.0</versions.maven.compiler>
 
 		<!-- dependency versions -->
-		<versions.junit.jupiter>[5.10,6.0)</versions.junit.jupiter>
-		<versions.junit.launcher>[1.10,2.0)</versions.junit.launcher>
+		<!-- https://maven.apache.org/pom.html#dependency-version-requirement-specification -->
+		<versions.junit.jupiter>[5.10,5.999999)</versions.junit.jupiter>
+		<versions.junit.launcher>[1.10,1.999999)</versions.junit.launcher>
 
-		<versions.apache.opennlp>[2.3,3.0)</versions.apache.opennlp>
-		<versions.apache.log4j2>[2.20,3.0)</versions.apache.log4j2>
-		<versions.commons.lang3>[3.13,4.0)</versions.commons.lang3>
-		<versions.commons.text>[1.10,2.0)</versions.commons.text>
+		<versions.apache.opennlp>[2.3,2.999999)</versions.apache.opennlp>
+		<versions.apache.log4j2>[2.20,2.999999)</versions.apache.log4j2>
+		<versions.commons.lang3>[3.13,3.999999)</versions.commons.lang3>
+		<versions.commons.text>[1.10,1.999999)</versions.commons.text>
 
-		<versions.jakarta.servlet>[5.0,6.0)</versions.jakarta.servlet>
-		<versions.eclipse.jetty>[11.0.15,12.0)</versions.eclipse.jetty>
-		<versions.mariadb.jdbc>[3.1.4,4.0)</versions.mariadb.jdbc>
+		<versions.jakarta.servlet>[5.0,5.999999)</versions.jakarta.servlet>
+		<versions.eclipse.jetty>[11.0.15,11.999999)</versions.eclipse.jetty>
+		<versions.mariadb.jdbc>[3.1.4,3.999999)</versions.mariadb.jdbc>
 	</properties>
 
 	<build>
