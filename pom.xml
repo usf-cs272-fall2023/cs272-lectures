@@ -8,7 +8,7 @@
 	<properties>
 		<!-- properties changed via command line -->
 		<config.werror>false</config.werror>
-		<config.xlint>-Xlint:all</config.xlint>
+		<config.xlint>-Xlint:all,-path,-processing</config.xlint>
 		<config.xdoclint>-Xdoclint:all/private</config.xdoclint>
 
 		<!-- project settings -->
