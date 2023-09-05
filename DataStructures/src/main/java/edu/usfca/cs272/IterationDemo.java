@@ -50,6 +50,19 @@ public class IterationDemo {
 			// add the word to the appropriate list directly
 			results.get(length).add(word);
 		}
+
+		/*
+		 * Why this approach? It can also handles cases where the key exists but for
+		 * some reason a value was not initialized, so it is a more defensive coding
+		 * style (which assumes there could be bugs in the code, and tries to still
+		 * function safely anyway). It also avoids accessing the map more times than
+		 * necessary, which for a TreeMap can sometimes matter. (The extra put operation
+		 * only happens if necessary, so sometimes there are only 1 log(n) accesses to
+		 * the map, instead of 2 log(n) accesses to the map. For code that is run once
+		 * on small data, it does not make a noticeable difference in runtime though.
+		 * Nevertheless, I like approaches that work in more situations as my default
+		 * go-to approach.
+		 */
 	}
 
 	/**
