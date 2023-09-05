@@ -137,7 +137,9 @@ public class IterationDemo {
 		 *
 		 * Output Inefficient: This is unnecessarily inefficient. What happens if there
 		 * are only two keys... 2 and 100. We loop through 100 times to get two values
-		 * out of our data structure!
+		 * out of our data structure! We also have poor runtime with the LinkedList when
+		 * we call get(...) like this in a loop, as it has to re-follow links from the
+		 * head (or tail) each iteration.
 		 */
 	}
 
@@ -149,7 +151,7 @@ public class IterationDemo {
 		System.out.println("Iterator Example:");
 		int iterations = 0;
 
-		// Gets the iterator for the map keys
+		// Gets the iterator for the map keys (show with var as well)
 		Iterator<Integer> setIterator = results.keySet().iterator();
 
 		while (setIterator.hasNext()) {
@@ -172,11 +174,13 @@ public class IterationDemo {
 		/*
 		 * Output Correct and Time Efficient: By using iterators, we never loop more
 		 * times than necessary. With a sorted data structure, the iterators will go
-		 * through the collection in sorted order.
+		 * through the collection in sorted order. With something like a LinkedList, it
+		 * doesn't have to re-follow links each iteration. In some cases, iterators
+		 * could also pre-fetch the next element since it knows the order of iteration.
 		 *
 		 * However, the use of iterators for such a simple case may be considered
 		 * unnecessarily "clunky" since there are other approaches that involve less
-		 * code and object references.
+		 * code and object references. The var keyword can help here though!
 		 */
 	}
 
@@ -207,7 +211,8 @@ public class IterationDemo {
 		 * off-by-one errors that comes with traditional for loops.
 		 *
 		 * You can use the for each loop on just about any type of collection, including
-		 * arrays.
+		 * arrays. It should be the default loop you use unless you need the index
+		 * value or need to iterate in a different order (e.g. every other item).
 		 */
 	}
 
@@ -236,7 +241,10 @@ public class IterationDemo {
 
 		/*
 		 * This approach grabs both the key and value at the same time, avoiding
-		 * multiple accesses to the nested data structure.
+		 * multiple accesses to the nested data structure. The var keyword is really
+		 * helpful here for preventing too much clutter in the code. Be careful
+		 * over-using this keyword... here it improves readability. Used too often, it
+		 * hurts readability.
 		 */
 	}
 
