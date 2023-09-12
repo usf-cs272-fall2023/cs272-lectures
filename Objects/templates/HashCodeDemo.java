@@ -3,13 +3,13 @@ package edu.usfca.cs272;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public static void testInteger(Integer value) {
-	printHash("INNER BEG", value);
-	value = 1;
-	printHash("INNER END", value);
-}
-
 public class HashCodeDemo {
+	public static void testInteger(Integer value) {
+		printHash("INNER BEG", value);
+		value = 1;
+		printHash("INNER END", value);
+	}
+
 	@SuppressWarnings("removal") // Don't do this!
 	public static void main(String[] args) {
 		Integer integer0 = new Integer(0);
