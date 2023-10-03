@@ -32,3 +32,9 @@ The following resources from the [Java API](https://www.cs.usfca.edu/~cs212/java
 The following resources from the [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se17/html/index.html) may be useful:
 
   - [Volatile Fields](https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.3.1.4)
+
+Newer versions of Java now also have the ability to use **virtual threads**. We will not upgrade mid-semester, but if you are curious the following resources may be useful: 
+
+  - [Concurrency](https://docs.oracle.com/en/java/javase/21/core/concurrency.html)
+  - [Virtual Threads](https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html) (Java 21+)
+  - [Thread Local Variables](https://docs.oracle.com/en/java/javase/21/core/thread-local-variables.html)
