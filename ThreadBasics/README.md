@@ -11,7 +11,7 @@ The following lecture slides and archived recordings may be useful:
   - [Thread Lifecycle](https://docs.google.com/presentation/d/e/2PACX-1vRGX8jcgM6Uk9EEI9ian35OtakGSD7ba9wuXbRl-9Q1oGDAhB1jgl1Bj4odajIM3QgYWHSEtUDs-GFm/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d02ef611-94da-49d4-828f-af9e015148ad))
   - [Thread Liveness](https://docs.google.com/presentation/d/e/2PACX-1vQ2jY-xnKbNM5c9CgATm-GvSmY5fq9MY-LuXXLAQSK93Muwd4ajhSCOhiaCihn8zoibjSdIZJ7yrZe9/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8a1cf952-c49b-47db-bada-af9e01510728))
   - [Thread Consistency](https://docs.google.com/presentation/d/e/2PACX-1vQKiEdNM-Uvys2eB-DviZl74962omUp1g8Y51TTo0AOIKi11Hfti6FeOMOKEYWpSmvMi7DsHcXkupcj/pub?start=false&loop=false&delayms=3000) and [Thread Synchronization](https://docs.google.com/presentation/d/e/2PACX-1vQRFhgmF4OSYPvisyIYsQewWhcPbMNxZX2xreQPOMjeA3ShkJuh7aF0rGEUu_wdBwuFA4TTn6TT1vpw/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0a7a2c89-0ee7-483f-b2d9-af9e01514f00))
-  - [Thread Coordination](https://docs.google.com/presentation/d/e/2PACX-1vTMD7lRdye-5kptn3d68vQYzJq2OQpIKtGLHyPK_sPYRExA5DWv9arIsF0121CP8PO2lV5UkJA-dhlb/pub?start=false&loop=false&delayms=3000)
+  - [Thread Coordination](https://docs.google.com/presentation/d/e/2PACX-1vTMD7lRdye-5kptn3d68vQYzJq2OQpIKtGLHyPK_sPYRExA5DWv9arIsF0121CP8PO2lV5UkJA-dhlb/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=78a35d29-3a61-481b-bd8d-afcd01320a04)
 
 The following archived recordings of the lecture code may be useful:
 
