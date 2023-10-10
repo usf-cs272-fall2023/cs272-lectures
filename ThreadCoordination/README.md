@@ -26,10 +26,10 @@ The following official [Java Tutorials](http://docs.oracle.com/javase/tutorial/i
 
   - [The Java Tutorials - Lesson: Concurrency](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html)
 
-The following resources from the [Java API](https://www.cs.usfca.edu/~cs212/javadoc/api/index.html) may be useful:
+The following resources from the [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/index.html) may be useful:
 
-  - [ReadWriteLock](https://www.cs.usfca.edu/~cs212/javadoc/api/java.base/java/util/concurrent/locks/ReadWriteLock.html)
-  - [ReentrantReadWriteLock](https://www.cs.usfca.edu/~cs212/javadoc/api/java.base/java/util/concurrent/locks/ReentrantReadWriteLock.html)
+  - [ReadWriteLock](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/ReadWriteLock.html)
+  - [ReentrantReadWriteLock](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/ReentrantReadWriteLock.html)
 
 The following resources from the [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se17/html/index.html) may be useful:
 

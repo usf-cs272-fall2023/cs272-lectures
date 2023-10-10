@@ -27,11 +27,11 @@ The following official [Java Tutorials](http://docs.oracle.com/javase/tutorial/i
 
   - [The Java Tutorials - Lesson: Concurrency](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html)
 
-The following resources from the [Java API](https://www.cs.usfca.edu/~cs212/javadoc/api/index.html) may be useful:
+The following resources from the [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/index.html) may be useful:
 
-  - [Object](https://www.cs.usfca.edu/~cs212/javadoc/api/java.base/java/lang/Object.html)
-  - [Runnable](https://www.cs.usfca.edu/~cs212/javadoc/api/java.base/java/lang/Runnable.html)
-  - [Thread](https://www.cs.usfca.edu/~cs212/javadoc/api/java.base/java/lang/Thread.html)
+  - [Object](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html)
+  - [Runnable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html)
+  - [Thread](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Thread.html)
 
 The following resources from the [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se17/html/index.html) may be useful:
 
