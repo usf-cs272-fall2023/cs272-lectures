@@ -14,7 +14,7 @@ package edu.usfca.cs272;
  * @author CS 272 Software Development (University of San Francisco)
  * @version Fall 2023
  */
-public class LockDemo {
+public class SyncDemo {
 	/** The first worker thread. */
 	private Worker worker1;
 
@@ -35,7 +35,7 @@ public class LockDemo {
 	 *
 	 * @param name the name to use for console output
 	 */
-	public LockDemo(String name) {
+	public SyncDemo(String name) {
 		instanceKey1 = new Object();
 		instanceKey2 = new Object();
 
@@ -48,12 +48,12 @@ public class LockDemo {
 		worker2 = new Worker(staticKey);
 
 		// TF TF TF TF
-//		worker1 = new Worker(LockDemo.class);
-//		worker2 = new Worker(LockDemo.class);
+//		worker1 = new Worker(SyncDemo.class);
+//		worker2 = new Worker(SyncDemo.class);
 
 		// TF TF TF TF
-//	worker1 = new Worker(LockDemo.class);
-//	worker2 = new Worker(LockDemo.Worker.class);
+//	worker1 = new Worker(SyncDemo.class);
+//	worker2 = new Worker(SyncDemo.Worker.class);
 
 		// TT FF TT FF
 //		worker1 = new Worker(instanceKey1);
@@ -130,7 +130,7 @@ public class LockDemo {
 	 * same time:
 	 *
 	 * <pre>
-	 * +---LockDemo A---+ +---LockDemo B---+
+	 * +---SyncDemo A---+ +---SyncDemo B---+
 	 * | +-A1-+  +-A2-+ | | +-B1-+  +-B2-+ |
 	 * | |    |  |    | | | |    |  |    | |
 	 * | +----+  +----+ | | +----+  +----+ |
@@ -147,8 +147,8 @@ public class LockDemo {
 	 * @throws InterruptedException if interrupted
 	 */
 	public static void main(String[] args) throws InterruptedException {
-		LockDemo a = new LockDemo("A");
-		LockDemo b = new LockDemo("B");
+		SyncDemo a = new SyncDemo("A");
+		SyncDemo b = new SyncDemo("B");
 
 		// Wait a little bit, hopefully the threads get a chance to get their locks
 		try {
@@ -178,7 +178,7 @@ public class LockDemo {
 		System.out.println(System.identityHashCode(instanceKey2));
 
 		System.out.println(System.identityHashCode(staticKey));
-		System.out.println(System.identityHashCode(LockDemo.class));
+		System.out.println(System.identityHashCode(SyncDemo.class));
 
 		System.out.println(System.identityHashCode(worker1.lock));
 		System.out.println(System.identityHashCode(worker2.lock));
