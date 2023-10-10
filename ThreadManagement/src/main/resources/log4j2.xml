@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE log4j:configuration>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%m%n">
+			</PatternLayout>
+		</Console>
+
+		<File name="FileLog" fileName="debug.log" append="false">
+			<PatternLayout pattern="[%3sequenceNumber %date{HH:mm:ss:SSS} %-5level{lowerCase=true}] %file#%line %thread: %message%n">
+			</PatternLayout>
+		</File>
+	</Appenders>
+
+	<Loggers>
+		<Root level="ALL">
+			<AppenderRef ref="Console" level="INFO" />
+			<AppenderRef ref="FileLog" level="ALL"  />
+		</Root>
+	</Loggers>
+</Configuration>
