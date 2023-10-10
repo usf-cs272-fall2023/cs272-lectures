@@ -32,7 +32,7 @@ The following [CS Tutoring Center](https://tutoringcenter.cs.usfca.edu/resources
 
 The following resources from the [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/) may be useful:
 
-  - [Package java.util.logging](https://www.cs.usfca.edu/~cs212/javadoc/api/java.logging/java/util/logging/package-summary.html)
+  - [Package java.util.logging](https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/package-summary.html)
 
 The following resources from the [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se17/html/index.html) may be useful:
 
