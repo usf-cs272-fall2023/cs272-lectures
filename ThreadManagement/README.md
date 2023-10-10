@@ -8,7 +8,7 @@ These demos illustrate basic concepts related to managing threads using work que
 The following lecture slides and archived recordings may be useful:
 
   - [Volatile Keyword](https://docs.google.com/presentation/d/e/2PACX-1vTGcN3sHInyYstf4P3IAn0hrq9HBoHxLs1tILfaA8MAgtsMlI39-aWEYiqyEQoClPdZgaL1cxzgcuaN/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4b9cb15c-39b6-456c-a8f4-af9e01507c04))
-  - [Thread Pools and Work Queues](https://docs.google.com/presentation/d/e/2PACX-1vS19DIgUp8W95_ChgGpM7ve2ItWmaWY6YFP8tyE-k3gA3tQ9cbj0vd6ZmP-gCi7fXhFaQdoh6BWU_0f/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2f293b16-3a5a-4975-8ae1-af9e01506eaf))
+  - [Thread Pools and Work Queues](https://docs.google.com/presentation/d/e/2PACX-1vSmDCuu6hHoWVa-3EbVMkePCuaQs6NQXA2r1_DUrTPyIrTM0AL2ZpgHqQ1Rxy0Va1Z9_d5YM36UJSzQ/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2f293b16-3a5a-4975-8ae1-af9e01506eaf))
 
 The following archived recordings of the lecture code may be useful:
 
