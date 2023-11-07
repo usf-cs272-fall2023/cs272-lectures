@@ -69,7 +69,7 @@ public class TodayServer {
 	 */
 	public static class TodayServlet extends HttpServlet {
 		/** Class version for serialization, in [YEAR][TERM] format (unused). */
-		private static final long serialVersionUID = 202301;
+		private static final long serialVersionUID = 202308;
 
 		/** Title of web page. */
 		private static final String TITLE = "Today";

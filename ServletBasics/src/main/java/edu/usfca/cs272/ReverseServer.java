@@ -54,7 +54,7 @@ public class ReverseServer {
 	 */
 	public static class ReverseGetServlet extends HttpServlet {
 		/** Class version for serialization, in [YEAR][TERM] format (unused). */
-		private static final long serialVersionUID = 202301;
+		private static final long serialVersionUID = 202308;
 
 		/** The title to use for this webpage. */
 		private static final String TITLE = "Reverse";
@@ -130,7 +130,7 @@ public class ReverseServer {
 	 */
 	public static class ReversePostServlet extends HttpServlet {
 		/** Class version for serialization, in [YEAR][TERM] format (unused). */
-		private static final long serialVersionUID = 202301;
+		private static final long serialVersionUID = 202308;
 
 		/** The title to use for this webpage. */
 		private static final String TITLE = "Reverse";

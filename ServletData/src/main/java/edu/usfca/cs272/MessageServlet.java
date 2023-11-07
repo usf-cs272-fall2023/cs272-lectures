@@ -41,7 +41,7 @@ public class MessageServlet extends HttpServlet {
 	private static final Logger log = LogManager.getLogger();
 
 	/** Class version for serialization, in [YEAR][TERM] format (unused). */
-	private static final long serialVersionUID = 202301;
+	private static final long serialVersionUID = 202308;
 
 	/** Format used for all date output. */
 	public static final String longDateFormat = "hh:mm a 'on' EEEE, MMMM dd yyyy";

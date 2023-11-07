@@ -23,7 +23,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 public class AdventureServlet extends HttpServlet {
-	private static final long serialVersionUID = 202301;
+	private static final long serialVersionUID = 202308;
 	private static Logger log = LogManager.getLogger();
 	private static final String TITLE = "Adventure!";
 	private static final Path TEMPLATE_PATH = Path.of("src", "main", "resources", "adventure.html");

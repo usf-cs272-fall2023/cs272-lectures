@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class MessageServlet extends HttpServlet {
 	private static final Logger log = LogManager.getLogger();
-	private static final long serialVersionUID = 202301;
+	private static final long serialVersionUID = 202308;
 	public static final String longDateFormat = "hh:mm a 'on' EEEE, MMMM dd yyyy";
 	public static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(longDateFormat);
 	public static final String title = "Messages";

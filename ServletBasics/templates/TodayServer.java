@@ -22,7 +22,7 @@ public class TodayServer {
 	}
 
 	public static class TodayServlet extends HttpServlet {
-		private static final long serialVersionUID = 202301;
+		private static final long serialVersionUID = 202308;
 		private static final String TITLE = "Today";
 
 		@Override

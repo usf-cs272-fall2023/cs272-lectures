@@ -31,7 +31,7 @@ public class VisitServer {
 	}
 
 	public static class VisitServlet extends HttpServlet {
-		private static final long serialVersionUID = 202301;
+		private static final long serialVersionUID = 202308;
 		private static final String TITLE = "Visits";
 
 		@Override
