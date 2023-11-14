@@ -37,7 +37,7 @@ public class FacultyServer {
 
 		// Attempt to connect to database and create servlet
 		DatabaseConnector connector = new DatabaseConnector(properties);
-		Set<String> expected = Set.of("faculty_names", "faculty_twitter", "faculty_courses");
+		Set<String> expected = Set.of("faculty_names", "faculty_github", "faculty_courses");
 
 		// Test database connection and setup
 		try (Connection db = connector.getConnection()) {

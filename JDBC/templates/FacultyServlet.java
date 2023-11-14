@@ -26,7 +26,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class FacultyServlet extends HttpServlet {
-	private static final long serialVersionUID = 202301;
+	private static final long serialVersionUID = 202308;
 	private static final Logger log = LogManager.getLogger();
 
 	private final DatabaseConnector connector;
@@ -34,7 +34,7 @@ public class FacultyServlet extends HttpServlet {
 	private final String htmlHeader;
 	private final String htmlRow;
 	private final String htmlFooter;
-	private static final Set<String> COLUMNS = Set.of("last", "first", "email", "twitter", "courses");
+	private static final Set<String> COLUMNS = Set.of("last", "first", "email", "github", "courses");
 
 	public FacultyServlet(DatabaseConnector connector) throws IOException {
 		this.connector = connector;
@@ -56,14 +56,14 @@ public class FacultyServlet extends HttpServlet {
 		boolean asc = !isEqual(request, "asc", "false");
 		String query = request.getParameter("query");
 		String field = getColumn(request, "field", "last");
-		boolean onTwitter = isEqual(request, "twitter", "on");
+		boolean onGithub = isEqual(request, "github", "on");
 		boolean hasFilter = query != null && !query.isBlank();
 
 		StringBuilder sql = new StringBuilder(sqlSelect);
 
-		if (onTwitter) {
+		if (onGithub) {
 			sql.append(System.lineSeparator());
-			// TODO twitter filter
+			// TODO github filter
 		}
 
 		if (hasFilter && !field.equals("courses")) {
@@ -88,7 +88,7 @@ public class FacultyServlet extends HttpServlet {
 		StringBuffer action = new StringBuffer();
 
 		// TODO form action
-//		action.append("&twitter=on");
+//		action.append("&github=on");
 //		action.append("&field=");
 //		action.append(field);
 //
@@ -111,18 +111,18 @@ public class FacultyServlet extends HttpServlet {
 					values.put("name", escape(results, "name"));
 					values.put("email", escape(results, "email"));
 					values.put("courses", "&nbsp;");
-					values.put("twitter", "&nbsp;");
+					values.put("github", "&nbsp;");
 
 					String courses = escape(results, "courses");
-					String twitter = escape(results, "twitter");
+					String github = escape(results, "github");
 
 					if (courses != null && !courses.isBlank()) {
 						values.put("courses", courses);
 					}
 
-					if (twitter != null && !twitter.isBlank()) {
-						String link = String.format("<a href=\"http://twitter.com/%1$s\">@%1$s</a>", twitter);
-						values.put("twitter", link);
+					if (github != null && !github.isBlank()) {
+						String link = String.format("<a href=\"http://github.com/%1$s\">@%1$s</a>", github);
+						values.put("github", link);
 					}
 
 					out.println(StringSubstitutor.replace(htmlRow, values));
@@ -143,7 +143,7 @@ public class FacultyServlet extends HttpServlet {
 		Map<String, String> values = new HashMap<>();
 		values.put("last", "true");
 		values.put("email", "true");
-		values.put("twitter", "true");
+		values.put("github", "true");
 		values.put("courses", "true");
 		values.put("filter", filter);
 		values.put(sort, Boolean.toString(!asc));
