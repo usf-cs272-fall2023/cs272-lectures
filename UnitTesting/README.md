@@ -7,9 +7,9 @@ These demos illustrate basic concepts related to unit testing using the JUnit fr
 
 The following lecture slides may be useful:
 
-  - [Software Bugs](https://docs.google.com/presentation/d/e/2PACX-1vSDGWEfJPnixD4y327D7BLc6Iyre_oON65Fi041S-rvhK8eZg-3wxQQea10GjZkaRmSj5BR0lA7Lwij/pub?start=false&loop=false&delayms=3000)
-  - [Software Testing](https://docs.google.com/presentation/d/e/2PACX-1vQCykMh0wOkbNohLHdsra9OttbGaberD5kR6EivUs1IQ70uKWRIJGJyWi7eWOfV1WmLUtAgoNVs111f/pub?start=false&loop=false&delayms=3000)
-  - [Unit Testing](https://docs.google.com/presentation/d/e/2PACX-1vT6cokBI3rwCMSABvuZOzAQw0gnAi3R4tTFsdVbRqwd8oUB2TwT5lEmwJaZMe74ihVwqtoS4dV68hBQ/pub?start=false&loop=false&delayms=3000)
+  - [Software Bugs](https://docs.google.com/presentation/d/e/2PACX-1vSQZTlb11PnC4cp6CMLcb5mYurs5QMW3babFIULzDf83yaj1V_oEA-lq8hkEhXJauN_d3huSiivZCXi/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4f4d5d4a-fc70-445c-a557-aff2014b831b))
+  - [Software Testing](https://docs.google.com/presentation/d/e/2PACX-1vS-W1EnhNWlVsv0CLdojXcP0Jf6gnucjv4114ocX4Jl_jMsoSmUsOVIsRUnqkqMCKdZGIZs0MF0cq8p/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=32fcdc51-1dd6-4880-bd07-aff7013e7ac8))
+  - [Unit Testing](https://docs.google.com/presentation/d/e/2PACX-1vQc4JrSBvvwHP5N2ZDxumQOUBoEak1QWrvaWGrJO5hz6hUV6OiTT2kE1TWbCboXDoGt-ttvAumhsI-O/pub?start=false&loop=false&delayms=3000) ([Video](https://usfca.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=68f43ecb-c5f2-4d61-ad1c-aff7016f6866))
 
 ## Other Resources ##
 
